@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Test from './test'
-
+import MainContainer from './pages/main/mainContainer'
 interface State {
   age : string
 }
@@ -12,19 +10,10 @@ export default class App extends React.Component <State> {
   }
   render() {
 
-    return (
-      <View style={styles.container}>
-        <Test age  = { this.state.age }></Test>
-      </View>
+    return ( 
+      <MainContainer></MainContainer>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+

@@ -13,7 +13,7 @@ class Test extends Component {
                     this.setState({ color: this.state.color === 'tomato' ? 'skyblue' : 'tomato' });
                     alert(this.props.age);
                 } },
-                React.createElement(Text, { style: [styles.title, { color: this.state.color }] }, "Hello World"))));
+                React.createElement(Text, { style: [styles.title, { color: this.state.color }] }, "Hello World!!~~`1~```??"))));
     }
 }
 const styles = StyleSheet.create({

@@ -1,4 +1,5 @@
 import React , { Component} from 'react';
+
 import {
     View,
     TouchableHighlight,
@@ -21,6 +22,9 @@ class Test extends Component <Props ,State> {
             color : 'tomato'
         }
     } 
+
+
+
     render () {
         return (
             <View>
@@ -29,7 +33,7 @@ class Test extends Component <Props ,State> {
                     alert(this.props.age)
                 }}>
                     <Text style = {[styles.title, { color: this.state.color }]}>
-                        Hello World
+                        Hello World!!~~`1~```??
                     </Text>
                 </TouchableHighlight>
             </View>
