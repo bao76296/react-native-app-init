@@ -24,10 +24,10 @@ class MainContainer extends Component {
         };
     }
     renderNavItem() {
-        return this.state.navItem.map(item => (React.createElement(TabNavigator.Item, { key: item.id, selected: this.state.selectedTab === item.selectedTab, title: "Home", renderIcon: () => React.createElement(Image, { style: styles.icon, source: item.icon }), renderSelectedIcon: () => React.createElement(Image, { style: styles.icon, source: item.icon }), onPress: () => this.setState({ selectedTab: item.selectedTab }) }, item.component)));
+        return this.state.navItem.map(item => (React.createElement(TabNavigator.Item, { key: item.id, selected: this.state.selectedTab === item.selectedTab, title: item.title, renderIcon: () => React.createElement(Image, { style: styles.icon, source: item.icon }), renderSelectedIcon: () => React.createElement(Image, { style: styles.icon, source: item.icon }), onPress: () => this.setState({ selectedTab: item.selectedTab }) }, item.component)));
     }
     render() {
-        return (React.createElement(View, { style: { paddingTop: 50, flex: 1 } },
+        return (React.createElement(View, { style: { flex: 1 } },
             React.createElement(TabNavigator, null, this.renderNavItem())));
     }
 }

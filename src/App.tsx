@@ -4,6 +4,8 @@ interface State {
   age : string
 }
 
+
+
 export default class App extends React.Component <State> {
   state  = {
     age : '20'

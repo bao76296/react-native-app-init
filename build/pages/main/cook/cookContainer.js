@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import * as Common from '../../../components/common';
+import { View, ScrollView } from 'react-native';
+import * as common from '../../../components/common';
+import CookSwiper from './cookSwiper';
+import CookHotClassify from './cookHotClassify';
 export default class CookContainer extends Component {
     render() {
-        return (React.createElement(View, { style: { flex: 1, backgroundColor: 'blue' } },
-            React.createElement(Common.Head, null, "\u83DC\u8C31\u5927\u5168"),
-            React.createElement(Text, null, "655555")));
+        return (React.createElement(ScrollView, null,
+            React.createElement(View, { style: { flex: 1, backgroundColor: '#3f3f3f' } },
+                React.createElement(CookSwiper, null),
+                React.createElement(CookHotClassify, null),
+                React.createElement(common.HostList, null))));
     }
 }
 //# sourceMappingURL=cookContainer.js.map

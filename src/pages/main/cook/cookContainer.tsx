@@ -1,20 +1,25 @@
 import React , { Component } from 'react';
 
 import {
-    Text, View
+     View,
+    ScrollView
 } from 'react-native';
-
-import * as Common from '../../../components/common'
+import * as common from '../../../components/common'
+import CookSwiper from './cookSwiper'
+import CookHotClassify from './cookHotClassify';
 
 export default class CookContainer extends Component {
     render () {
         return (
-           <View style ={{flex:1,backgroundColor:'blue'}}>
-             <Common.Head>菜谱大全</Common.Head>
-             <Text>655555</Text>
+        <ScrollView>
+           <View style ={{flex:1,backgroundColor : '#3f3f3f'}}>
+            
+             <CookSwiper></CookSwiper>
+             <CookHotClassify></CookHotClassify>
+             <common.HostList></common.HostList>
            </View>
            
-           
+           </ScrollView>
         )
     }
 }

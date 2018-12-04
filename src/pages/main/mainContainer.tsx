@@ -44,7 +44,7 @@ class MainContainer extends Component <Props,State>{
             <TabNavigator.Item
                 key ={item.id}
                 selected={this.state.selectedTab === item.selectedTab}
-                title="Home"
+                title={item.title}
                 renderIcon={() => <Image style ={styles.icon} source={item.icon} />}
                 renderSelectedIcon={() => <Image style ={styles.icon} source={item.icon} />}
                 onPress={() => this.setState({ selectedTab: item.selectedTab })}>
@@ -56,7 +56,7 @@ class MainContainer extends Component <Props,State>{
 
    render () {
        return (
-        <View style = {{paddingTop : 50,flex : 1}}>
+        <View style = {{flex : 1}}>
         
             <TabNavigator>
                 {this.renderNavItem()}

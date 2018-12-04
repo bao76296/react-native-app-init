@@ -1,3 +1,4 @@
 import Head from './head/head';
-export { Head };
+import HostList from './hotlist/hotlist';
+export { Head, HostList };
 //# sourceMappingURL=index.js.map
