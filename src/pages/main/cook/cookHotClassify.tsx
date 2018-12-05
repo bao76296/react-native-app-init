@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import { View, Text , StyleSheet } from 'react-native';
+import { View, Text , StyleSheet,TouchableWithoutFeedback } from 'react-native';
 
 interface props{
 
@@ -21,10 +21,29 @@ export default class CookHotClassify extends Component <props, state> {
 
     componentDidMount () {
         Fetch('/cookbook-category.json').then( res  => {
+            var temp = res.data.category["热门"].slice(0,11)
+            temp.push('更多...');
             this.setState ({
-                hotClassifyList : res.data.category["热门"].slice(0,11).push('更多...')
+                hotClassifyList : temp
             })
         })
+    }
+
+    renderButton () {
+        let listData = this.state.hotClassifyList
+        if(listData.length <= 0){
+            return false
+        }
+        return listData.map( (item, i) =>(
+            <TouchableWithoutFeedback key={i}>
+                <View  style={styles.buttonStyle}>
+                    <Text>
+                        {item}
+                    </Text>
+                </View>
+                
+            </TouchableWithoutFeedback>
+        ))
     }
 
     render () {
@@ -33,8 +52,12 @@ export default class CookHotClassify extends Component <props, state> {
                 <Text style = {styles.title}>
                     精品好菜
                 </Text>
+                <View style = {styles.buttonWrapper}>
+                   {this.renderButton()}
+                   
+                </View>
             </View>
-        )
+        ) 
     }
 }
 
@@ -44,6 +67,25 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         fontSize : 18,
         padding : 12,
+        color : '#333'
+    },
+    buttonWrapper : {
+        flexDirection : 'row',
+        flexWrap : 'wrap',
+        width : '100%'
+    },
+    buttonStyle : {
+        width : '25%',
+        justifyContent : 'center',
+        alignItems : 'center',
+        padding : 12,
+        borderWidth : 1,
+        borderColor : '#ccc',
+        marginTop: -1,
+        marginLeft : -1,
+        backgroundColor : '#fff'
+    },
+    textWrapper : {
         color : '#333'
     }
 })

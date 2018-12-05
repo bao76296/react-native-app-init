@@ -1,4 +1,4 @@
 
 export const AjaxConfig = {
-    serverUrl : 'http://10.9.69.238:3000'
+    serverUrl : 'http://192.168.137.1:3000'
 }

@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     desc: {
         paddingTop: 5,
         fontSize: 12,
-        color: '#f3f3f3'
+        color: '#333'
     }
 });
 //# sourceMappingURL=hotlist.js.map

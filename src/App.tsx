@@ -1,19 +1,16 @@
 import React from 'react';
 import MainContainer from './pages/main/mainContainer'
-interface State {
-  age : string
-}
+import { Provider } from 'mobx-react'
+import store from './store'
 
 
-
-export default class App extends React.Component <State> {
-  state  = {
-    age : '20'
-  }
+export default class App extends React.Component{
   render() {
 
     return ( 
-      <MainContainer></MainContainer>
+      <Provider store = {store}>
+         <MainContainer></MainContainer>
+      </Provider>
     );
   }
 }

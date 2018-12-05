@@ -4,19 +4,18 @@ import {
      View,
     ScrollView
 } from 'react-native';
-import * as common from '../../../components/common'
 import CookSwiper from './cookSwiper'
 import CookHotClassify from './cookHotClassify';
-
+import CookHotList from './cookHotList'
 export default class CookContainer extends Component {
     render () {
         return (
         <ScrollView>
-           <View style ={{flex:1,backgroundColor : '#3f3f3f'}}>
+           <View style ={{flex:1,backgroundColor : '#f5f5f5'}}>
             
              <CookSwiper></CookSwiper>
              <CookHotClassify></CookHotClassify>
-             <common.HostList></common.HostList>
+             <CookHotList></CookHotList>
            </View>
            
            </ScrollView>
