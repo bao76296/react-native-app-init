@@ -2,12 +2,15 @@ import React , { Component } from 'react';
 import { View, Text , StyleSheet,TouchableWithoutFeedback } from 'react-native';
 
 interface props{
-
+    store ? :any
 }
 interface state {
     hotClassifyList : Array<any>
 }
 import Fetch from '../../../util/Fetch'
+import { inject } from 'mobx-react'
+
+@inject('store')
 export default class CookHotClassify extends Component <props, state> {
 
 
@@ -35,7 +38,13 @@ export default class CookHotClassify extends Component <props, state> {
             return false
         }
         return listData.map( (item, i) =>(
-            <TouchableWithoutFeedback key={i}>
+            <TouchableWithoutFeedback key={i} onPress={
+                ()=> {
+                    this.props.store.navigation.navigator.navigate('List',{
+                        title : item
+                    })
+                }
+            }>
                 <View  style={styles.buttonStyle}>
                     <Text>
                         {item}

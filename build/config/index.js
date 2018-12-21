@@ -1,4 +1,4 @@
 export const AjaxConfig = {
-    serverUrl: 'http://192.168.137.1:3000'
+    serverUrl: 'http://106.13.42.179:3000/mock'
 };
 //# sourceMappingURL=index.js.map
